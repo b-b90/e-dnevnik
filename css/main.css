@@ -22,3 +22,53 @@ time, mark, audio, video {
     font: inherit;
 }
 
+.home-background {
+    background: url('../media/home-background-min.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.login-form {
+    padding: 80px 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid greenyellow;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background: gray;
+    opacity: 0.9;
+}
+
+.login-form input {
+    margin-bottom: 30px;
+    opacity: 1;
+    background: gray;
+    border: 0;
+    padding: 5px;
+    outline: none;
+    color: greenyellow;
+}
+
+.login-form input {
+    border-bottom: 2px solid yellow;
+}
+
+.login-form input[type="submit"] {
+    border: 1px solid yellow;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.login-form input[type="submit"]:hover {
+    background: greenyellow;
+    color: gray;
+}
