@@ -72,3 +72,258 @@ time, mark, audio, video {
     background: greenyellow;
     color: gray;
 }
+
+/* profesor */
+
+.header {
+    min-height: 250px;
+    background: url("../media/Children\ banner.jpg");
+    background-size: cover;
+    position: relative;
+    background-position: center;
+}
+
+.nav {
+    justify-content: space-between;
+    color: white;
+}
+
+.nav a {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    background: gray;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.section-1 h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+.section-2 h4 {
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 24px;
+}
+
+.dodaj-obavestenje {
+    border: 1px solid black;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dodaj-obavestenje h5 {
+    font-size: 20px;
+}
+
+.dodaj-obavestenje img {
+    cursor: pointer;
+}
+
+.obavestenje {
+    display: none;
+    margin-top: 20px;
+}
+
+.obavestenje h5 {
+    font-size: 22px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.obavestenje textarea {
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.obavestenje input[type="text"] {
+    font-size: 18px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.obavestenje input[type="button"] {
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 10px 20px;
+    background: green;
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+.section-1, .section-2, .section-3, .section-4 {
+    padding: 50px 0;
+}
+
+.izostanci.naslov h3 {
+    padding: 20px;
+    font-size: 26px;
+}
+
+.izostanci h4 {
+    font-size: 22px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.izostanci h4 span {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.izostanci.left {
+    padding-right: 0;
+}
+
+.izostanci.right {
+    padding-left: 0;
+}
+
+.izostanci + .izostanci span {
+    color: red;
+}
+
+.izostanci h3 {
+    font-size: 24px;
+    font-weight: 700;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+.section-4 .naslov {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.section-4 .predmet h4 {
+    font-size: 22px;
+    padding: 20px 10px;
+    border: 1px solid black;
+    font-weight: 700;
+    text-align: center;
+    min-height: 94px;
+}
+
+.cetiri-kolone {
+    padding: 0;
+}
+
+.cetiri-kolone:first-child {
+    padding-left: 15px;
+}
+
+.cetiri-kolone:last-child {
+    padding-right: 15px;
+}
+
+.section-4 h5 {
+    font-size: 22px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.cetiri-kolone h3 {
+    font-size: 22px;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+    font-weight: 700;
+}
+
+.cetiri-kolone p {
+    font-size: 22px;
+    padding: 10px;
+}
+
+.ocene {
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.ocene p {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ocene span {
+    padding: 6px 13px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+.ocene span + span {
+    margin-left: 5px;
+}
+
+.ocene img {
+    width: 46px;
+    height: 46px;
+    cursor: pointer;
+}
+
+.predmeti-footer h3 {
+    font-size: 26px;
+    padding: 20px 10px;
+    border: 1px solid black;
+}
+
+.predmeti-footer h2 {
+    font-size: 26px;
+    padding: 20px;
+    border: 1px solid black;
+    font-weight: 700;
+    text-align: center;
+}
+
+.predmeti-footer div div:first-child {
+    padding-right: 0;
+}
+
+.predmeti-footer div div:last-child {
+    padding-left: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .izostanci.left {
+        padding-right: 15px;
+    }
+    
+    .izostanci.right {
+        padding-left: 15px;
+    }
+
+    .cetiri-kolone {
+        padding: 0 15px;
+    }
+
+    .predmeti-footer div div:first-child {
+        padding-right: 15px;
+    }
+    
+    .predmeti-footer div div:last-child {
+        padding-left: 15px;
+    }
+
+    .mali-ekran {
+        display: none;
+    }
+
+    .ocene span:nth-child(7) {
+        margin-left: 0;
+    }
+
+    .ocene img {
+        align-self: flex-end;
+    }
+}
