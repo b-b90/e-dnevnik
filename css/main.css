@@ -107,6 +107,28 @@ time, mark, audio, video {
     font-size: 24px;
 }
 
+.naslov-obavestenja {
+    border: 1px solid black;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.naslov-obavestenja h5 {
+    font-size: 20px;
+}
+
+.naslov-obavestenja img {
+    cursor: pointer;
+}
+
+.description-obavestenja {
+    padding: 20px 10px;
+    border: 1px solid black;
+    font-size: 18px;
+    display: none;
+}
+
 .dodaj-obavestenje {
     border: 1px solid black;
     padding: 10px;

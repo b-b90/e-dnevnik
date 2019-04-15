@@ -6,6 +6,12 @@ $(function () {
         $('.obavestenje').slideToggle();
     })
 
+    $('.procitaj-obavestenje').on('click', function() {
+
+        $('.description-obavestenja').slideToggle();
+        $(this).css({'transform' : 'rotate(90deg)'});
+    })
+
     // add new notification
     $("#dodaj-novo-obavestenje").on('click', function() {
         let naslov = $("#naslov").val();
@@ -25,6 +31,12 @@ $(function () {
 
     function dataWork (data) {
         console.log(data);
+
+        // ime prezime
+        $('#ime-prezime').text(data[0].imePrezime);
+
+        // obavestenja
+
 
         // izostanci
         $('.izostanci.left span').text(data[0].izostanci.opravdaniIzostanci);
