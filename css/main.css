@@ -229,6 +229,7 @@ time, mark, audio, video {
     font-size: 22px;
     padding: 10px;
     border: 1px solid black;
+    text-transform: capitalize;
 }
 
 .cetiri-kolone h3 {

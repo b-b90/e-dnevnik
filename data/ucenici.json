@@ -1,28 +1,18 @@
-{
-
-    "ucenici" : {
-
-        "ucenik1" : {
-            "imePrezime" : "Ivan Maric",
-            "jmbg" : 2309945230006,
-            "obavestenja" : [{
-                "naslov" : "Izostanci",
-                "description" : "Ne pojavljuje se na casovima."
-            }],
-            "izostanci" : [{
-                "opravdaniIzostnci" : 23
-            },
-            {
-                "neopravdaniIzostnci" : 10
-            }],
-            "predmeti" : ["matematika", "srpski jezik", "fizicko vaspitanje"],
-            "ocene" : {
-                "matematika" : [4, 5, 2, 3],
-                "srpski jezik" : [4, 3, 3, 5, 4],
-                "fizicko vaspitanje" : [5, 4, 5]
-            }
+    [{
+        "imePrezime" : "Ivan Maric",
+        "jmbg" : 2309945230006,
+        "obavestenja" : [{
+            "naslov" : "Izostanci",
+            "description" : "Ne pojavljuje se na casovima."
+        }],
+        "izostanci" : {
+            "opravdaniIzostanci" : 23,
+            "neopravdaniIzostnci" : 11
+        },
+        "predmeti" : ["matematika", "srpski jezik", "fizicko vaspitanje"],
+        "ocene" : {
+            "matematika" : [4, 5, 2, 3],
+            "srpski jezik" : [4, 3, 3, 5, 4],
+            "fizicko vaspitanje" : [5, 4, 5]
         }
-
-    }
-
-}
+    }]
