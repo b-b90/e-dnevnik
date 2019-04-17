@@ -6,12 +6,6 @@ $(function () {
         $('.obavestenje').slideToggle();
     })
 
-    $('.procitaj-obavestenje').on('click', function() {
-
-        $('.description-obavestenja').slideToggle();
-        $(this).css({'transform' : 'rotate(90deg)'});
-    })
-
     // add new notification
     $("#dodaj-novo-obavestenje").on('click', function() {
         let naslov = $("#naslov").val();
@@ -21,8 +15,23 @@ $(function () {
         $("#description").val(' ');
         $("#naslov").val(' ');
 
-        $('.okvir').append();
+        $('.okvir').prepend(`
+            <div class="staro-obavestenje">
+                <div class="naslov-obavestenja d-flex">
+                    <h5>${naslov}</h5>
+                    <img class="procitaj-obavestenje" src="media/look-down-min.png" alt="">
+                </div>
+                <div class="description-obavestenja">
+                    <p>${description}</p>
+                </div>
+            </div>
+        `);
     })
+    
+    $(document).on('click', '.procitaj-obavestenje', function() {
+        $(this).parent().siblings().slideToggle();
+        $(this).toggleClass('activ-obavestenje');
+    });
 
     // get data about pupil
     fetch('./data/ucenici.json')
@@ -55,11 +64,11 @@ $(function () {
             let zakljucnaOcena = 0;
             let brojOcena = data[0].ocene[predmet].length;
 
-            for(let i = 0; i < data[0].ocene[predmet].length; i++) {
+            for(let i = 0; i < brojOcena; i++) {
                 ocene += `<span>${data[0].ocene[predmet][i]}</span>`;
             }
 
-            for(let i = 0; i < data[0].ocene[predmet].length; i++) {
+            for(let i = 0; i < brojOcena; i++) {
                 prosek += data[0].ocene[predmet][i];
             }
 
@@ -81,7 +90,11 @@ $(function () {
                                 <h4 class="mali-ekran">Ocene</h4>
                                 <div class="d-flex ocene">
                                     <p>${ocene}</p>
-                                    <img src="media/add-ocena.png" alt="">
+                                    <div class="dodavanje-ocene">
+                                        <input class="nova-ocena" type="number" min="1" max="5" />
+                                        <input class="ocena-dodata" type="button" value="OK" />
+                                    </div>
+                                    <img class="otvori-dodavanje" src="media/add-ocena.png" alt="">
                                 </div>
                             </div>
                             <div class="col-md-2 cetiri-kolone">
@@ -105,7 +118,11 @@ $(function () {
                             <div class="col-md-5 cetiri-kolone">
                                 <div class="d-flex ocene">
                                     <p>${ocene}</p>
-                                    <img src="media/add-ocena.png" alt="">
+                                    <div class="dodavanje-ocene">
+                                        <input class="nova-ocena" type="number" min="1" max="5" />
+                                        <input class="ocena-dodata" type="button" value="OK" />
+                                    </div>
+                                    <img class="otvori-dodavanje" src="media/add-ocena.png" alt="">
                                 </div>
                             </div>
                             <div class="col-md-2 cetiri-kolone">
@@ -124,5 +141,16 @@ $(function () {
 
         $('#ukupan-prosek').text(ukupanProsek);
     }
+
+    $(document).on('click', '.otvori-dodavanje', function() {
+        $(this).prev().toggle();
+        $(this).toggle();
+    })
+
+    $(document).on('click', '.ocena-dodata', function() {
+        console.log($(this).prev().val());
+        $(this).parent().next().toggle();
+        $(this).parent().toggle();
+    })
 
 });
