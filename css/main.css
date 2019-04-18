@@ -310,7 +310,7 @@ time, mark, audio, video {
     width: 50px;
 }
 
-.dodavanje-ocene input[type="text"] {
+.dodavanje-ocene input[type="number"] {
     padding-left: 5px;
 }
 

@@ -7,13 +7,13 @@ $(function () {
     })
 
     // add new notification
-    $("#dodaj-novo-obavestenje").on('click', function() {
-        let naslov = $("#naslov").val();
-        let description = $("#description").val();
+    $('#dodaj-novo-obavestenje').on('click', function() {
+        let naslov = $('#naslov').val();
+        let description = $('#description').val();
 
-        $(".obavestenje").slideToggle();
-        $("#description").val(' ');
-        $("#naslov").val(' ');
+        $('.obavestenje').slideToggle();
+        $('#description').val(' ');
+        $('#naslov').val(' ');
 
         $('.okvir').prepend(`
             <div class="staro-obavestenje">
@@ -45,7 +45,20 @@ $(function () {
         $('#ime-prezime').text(data[0].imePrezime);
 
         // obavestenja
+        let naslov = data[0].obavestenja[0].naslov;
+        let description = data[0].obavestenja[0].description;
 
+        $('.okvir').prepend(`
+            <div class="staro-obavestenje">
+                <div class="naslov-obavestenja d-flex">
+                    <h5>${naslov}</h5>
+                    <img class="procitaj-obavestenje" src="media/look-down-min.png" alt="">
+                </div>
+                <div class="description-obavestenja">
+                    <p>${description}</p>
+                </div>
+            </div>
+        `);
 
         // izostanci
         $('.izostanci.left span').text(data[0].izostanci.opravdaniIzostanci);
@@ -140,17 +153,18 @@ $(function () {
         ukupanProsek = (ukupanProsek / brojPredmeta).toFixed(2);
 
         $('#ukupan-prosek').text(ukupanProsek);
+
+        $(document).on('click', '.otvori-dodavanje', function() {
+            $(this).prev().toggle();
+            $(this).toggle();
+        })
+
+        $(document).on('click', '.ocena-dodata', function() {
+            console.log($(this).prev().val());
+            $(this).parent().next().toggle();
+            $(this).parent().toggle();
+            $(this).prev().val('');
+        })
     }
-
-    $(document).on('click', '.otvori-dodavanje', function() {
-        $(this).prev().toggle();
-        $(this).toggle();
-    })
-
-    $(document).on('click', '.ocena-dodata', function() {
-        console.log($(this).prev().val());
-        $(this).parent().next().toggle();
-        $(this).parent().toggle();
-    })
 
 });
