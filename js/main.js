@@ -11,21 +11,25 @@ $(function () {
         let naslov = $('#naslov').val();
         let description = $('#description').val();
 
-        $('.obavestenje').slideToggle();
-        $('#description').val(' ');
-        $('#naslov').val(' ');
+        if (naslov != '' && description != '') {
+            $('.obavestenje').slideToggle();
+            $('#description').val(' ');
+            $('#naslov').val(' ');
 
-        $('.okvir').prepend(`
-            <div class="staro-obavestenje">
-                <div class="naslov-obavestenja d-flex">
-                    <h5>${naslov}</h5>
-                    <img class="procitaj-obavestenje" src="media/look-down-min.png" alt="">
+            $('.okvir').prepend(`
+                <div class="staro-obavestenje">
+                    <div class="naslov-obavestenja d-flex">
+                        <h5>${naslov}</h5>
+                        <img class="procitaj-obavestenje" src="media/look-down-min.png" alt="">
+                    </div>
+                    <div class="description-obavestenja">
+                        <p>${description}</p>
+                    </div>
                 </div>
-                <div class="description-obavestenja">
-                    <p>${description}</p>
-                </div>
-            </div>
-        `);
+            `);
+        } else {
+            alert('Popunite sva polja pa pokusajte ponovo.')
+        }
     })
     
     $(document).on('click', '.procitaj-obavestenje', function() {
@@ -40,6 +44,7 @@ $(function () {
 
     function dataWork (data) {
         console.log(data);
+        let nizOcena = [];
 
         // ime prezime
         $('#ime-prezime').text(data[0].imePrezime);
@@ -160,10 +165,16 @@ $(function () {
         })
 
         $(document).on('click', '.ocena-dodata', function() {
-            console.log($(this).prev().val());
-            $(this).parent().next().toggle();
-            $(this).parent().toggle();
-            $(this).prev().val('');
+            let ocena = $(this).prev().val();
+
+            if(ocena != '') {
+                $(this).parent().prev().append( `<span>${ocena}</span>`);
+                $(this).parent().next().toggle();
+                $(this).parent().toggle();
+                $(this).prev().val('');
+            } else {
+                alert('Niste uneli ocenu.')
+            }
         })
     }
 
