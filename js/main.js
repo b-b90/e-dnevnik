@@ -44,26 +44,27 @@ $(function () {
 
     function dataWork (data) {
         console.log(data);
-        let nizOcena = [];
 
         // ime prezime
         $('#ime-prezime').text(data[0].imePrezime);
 
         // obavestenja
-        let naslov = data[0].obavestenja[0].naslov;
-        let description = data[0].obavestenja[0].description;
+        for(let i = 0; i < data[0].obavestenja.length; i++) {
+            let naslov = data[0].obavestenja[i].naslov;
+            let description = data[0].obavestenja[i].description;
 
-        $('.okvir').prepend(`
-            <div class="staro-obavestenje">
-                <div class="naslov-obavestenja d-flex">
-                    <h5>${naslov}</h5>
-                    <img class="procitaj-obavestenje" src="media/look-down-min.png" alt="">
+            $('.okvir').prepend(`
+                <div class="staro-obavestenje">
+                    <div class="naslov-obavestenja d-flex">
+                        <h5>${naslov}</h5>
+                        <img class="procitaj-obavestenje" src="media/look-down-min.png" alt="">
+                    </div>
+                    <div class="description-obavestenja">
+                        <p>${description}</p>
+                    </div>
                 </div>
-                <div class="description-obavestenja">
-                    <p>${description}</p>
-                </div>
-            </div>
-        `);
+            `);
+        }
 
         // izostanci
         $('.izostanci.left span').text(data[0].izostanci.opravdaniIzostanci);
@@ -121,7 +122,7 @@ $(function () {
                             </div>
                             <div class="col-md-2 cetiri-kolone">
                                 <h4 class="mali-ekran">Zakljucna ocena</h4>
-                                <h3>${zakljucnaOcena}</h3>
+                                <h3 class="zakljucna-ocena">${zakljucnaOcena}</h3>
                             </div>
                         </div>
                     </div>
@@ -147,7 +148,7 @@ $(function () {
                                 <h3>${prosek}</h3>
                             </div>
                             <div class="col-md-2 cetiri-kolone">
-                                <h3>${zakljucnaOcena}</h3>
+                                <h3 class="zakljucna-ocena">${zakljucnaOcena}</h3>
                             </div>
                         </div>
                     </div>
@@ -164,6 +165,7 @@ $(function () {
             $(this).toggle();
         })
 
+        // when you add new mark
         $(document).on('click', '.ocena-dodata', function() {
             let ocena = $(this).prev().val();
 
@@ -175,6 +177,35 @@ $(function () {
             } else {
                 alert('Niste uneli ocenu.')
             }
+
+            let ocene = $(this).parent().prev().find('span');
+            let brojOcena = ocene.length;
+            let zbir = 0;
+            let prosek = 0;
+            let zakljucna = 0;
+            let ukupnaZakljucna = 0;
+            
+            for(let i = 0; i < brojOcena; i++) {
+                zbir += Number($(ocene[i]).text());
+            }
+
+            prosek = (zbir / brojOcena).toFixed(2);
+            zakljucna = Math.round(prosek);
+
+            let prosekNiz = $(this).parent().parent().parent().next().find('h3');
+            $(prosekNiz[0]).text(prosek);
+
+            let zakljucnaNiz = $(this).parent().parent().parent().next().next().find('h3');
+            $(zakljucnaNiz[0]).text(zakljucna);
+
+            let sveZakljucne = $('.predmet').find('.zakljucna-ocena');
+
+            for(let i = 0; i < sveZakljucne.length; i++) {
+                ukupnaZakljucna += Number($(sveZakljucne[i]).text());
+            }
+
+            ukupnaZakljucna = (ukupnaZakljucna / sveZakljucne.length).toFixed(2);
+            $('#ukupan-prosek').text(ukupnaZakljucna);
         })
     }
 

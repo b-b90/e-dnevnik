@@ -4,6 +4,10 @@
         "obavestenja" : [{
             "naslov" : "Izostanci",
             "description" : "Ne pojavljuje se na casovima."
+        },
+        {
+            "naslov" : "Ukor",
+            "description" : "Tuca u dvoristu sa ucenicima iz druge skole."
         }],
         "izostanci" : {
             "opravdaniIzostanci" : 23,
