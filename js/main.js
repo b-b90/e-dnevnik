@@ -1,4 +1,6 @@
 $(function () {
+
+    let redniBroj = localStorage.getItem('redniBroj');
     
     // open panel for adding new notification
     $('#dodaj-obavestenje').on('click', function() {
@@ -46,12 +48,12 @@ $(function () {
         console.log(data);
 
         // ime prezime
-        $('#ime-prezime').text(data[0].imePrezime);
+        $('#ime-prezime').text(data[redniBroj].imePrezime);
 
         // obavestenja
-        for(let i = 0; i < data[0].obavestenja.length; i++) {
-            let naslov = data[0].obavestenja[i].naslov;
-            let description = data[0].obavestenja[i].description;
+        for(let i = 0; i < data[redniBroj].obavestenja.length; i++) {
+            let naslov = data[redniBroj].obavestenja[i].naslov;
+            let description = data[redniBroj].obavestenja[i].description;
 
             $('.okvir').prepend(`
                 <div class="staro-obavestenje">
@@ -67,28 +69,28 @@ $(function () {
         }
 
         // izostanci
-        $('.izostanci.left span').text(data[0].izostanci.opravdaniIzostanci);
-        $('.izostanci.right span').text(data[0].izostanci.neopravdaniIzostnci);
-        $('.izostanci.ukupno span').text(data[0].izostanci.opravdaniIzostanci + data[0].izostanci.neopravdaniIzostnci);
+        $('.izostanci.left span').text(data[redniBroj].izostanci.opravdaniIzostanci);
+        $('.izostanci.right span').text(data[redniBroj].izostanci.neopravdaniIzostnci);
+        $('.izostanci.ukupno span').text(data[redniBroj].izostanci.opravdaniIzostanci + data[redniBroj].izostanci.neopravdaniIzostnci);
 
         // predmeti i ocene
         let ukupanProsek = 0;
-        let brojPredmeta = data[0].predmeti.length;
+        let brojPredmeta = data[redniBroj].predmeti.length;
 
-        for(let i = 0; i < data[0].predmeti.length; i++) {
+        for(let i = 0; i < data[redniBroj].predmeti.length; i++) {
 
-            let predmet = data[0].predmeti[i];
+            let predmet = data[redniBroj].predmeti[i];
             let ocene = '';
             let prosek = 0;
             let zakljucnaOcena = 0;
-            let brojOcena = data[0].ocene[predmet].length;
+            let brojOcena = data[redniBroj].ocene[predmet].length;
 
             for(let i = 0; i < brojOcena; i++) {
-                ocene += `<span>${data[0].ocene[predmet][i]}</span>`;
+                ocene += `<span>${data[redniBroj].ocene[predmet][i]}</span>`;
             }
 
             for(let i = 0; i < brojOcena; i++) {
-                prosek += data[0].ocene[predmet][i];
+                prosek += data[redniBroj].ocene[predmet][i];
             }
 
             prosek = (prosek / brojOcena).toFixed(2);
