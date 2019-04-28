@@ -1,22 +1,226 @@
     [{
-        "imePrezime" : "Ivan Maric",
+        "imePrezime" : "Ivan Marić",
         "jmbg" : 2309945230006,
         "obavestenja" : [{
             "naslov" : "Izostanci",
-            "description" : "Ne pojavljuje se na casovima."
+            "description" : "Ne pojavljuje se na časovima. Jedan od roditelja da dodje u školu na razgovor."
         },
         {
             "naslov" : "Ukor",
-            "description" : "Tuca u dvoristu sa ucenicima iz druge skole."
+            "description" : "Tuča u blizini školskog dvorišta sa učenicima iz druge škole. Roditelji da se oglase nakon što pročitaju obaveštenje."
         }],
         "izostanci" : {
             "opravdaniIzostanci" : 23,
             "neopravdaniIzostnci" : 11
         },
-        "predmeti" : ["matematika", "srpski jezik", "fizicko vaspitanje"],
+        "predmeti" : ["matematika", "srpski jezik", "fizičko vaspitanje", "priroda i društvo", "likovna kultura", "muzička kultura", "engleski jezik"],
         "ocene" : {
             "matematika" : [4, 5, 2, 3],
             "srpski jezik" : [4, 3, 3, 5, 4],
-            "fizicko vaspitanje" : [5, 4, 5]
+            "fizičko vaspitanje" : [5, 4, 5],
+            "priroda i društvo" : [4, 3],
+            "likovna kultura" : [3, 2, 4],
+            "muzička kultura" : [3, 2, 3, 4],
+            "engleski jezik" : [3, 4, 5, 3]
+        }
+    },
+    {
+        "imePrezime" : "Nevena Ilić",
+        "jmbg" : 2309945230006,
+        "obavestenja" : [{
+            "naslov" : "Izostanci",
+            "description" : "Ne pojavljuje se na časovima. Jedan od roditelja da dodje u školu na razgovor."
+        }],
+        "izostanci" : {
+            "opravdaniIzostanci" : 33,
+            "neopravdaniIzostnci" : 14
+        },
+        "predmeti" : ["matematika", "srpski jezik", "fizičko vaspitanje", "priroda i društvo", "likovna kultura", "muzička kultura", "engleski jezik"],
+        "ocene" : {
+            "matematika" : [4, 2, 2, 3],
+            "srpski jezik" : [4, 3, 5, 5, 4],
+            "fizičko vaspitanje" : [3, 4, 5],
+            "priroda i društvo" : [4, 4],
+            "likovna kultura" : [3, 2, 4],
+            "muzička kultura" : [3, 5, 3, 4],
+            "engleski jezik" : [3, 4, 5, 5]
+        }
+    },
+    {
+        "imePrezime" : "Marko Rosić",
+        "jmbg" : 2309945230006,
+        "obavestenja" : [{
+            "naslov" : "Ukor",
+            "description" : "Tuča u blizini školskog dvorišta sa učenicima iz druge škole. Roditelji da se oglase nakon što pročitaju obaveštenje."
+        }],
+        "izostanci" : {
+            "opravdaniIzostanci" : 20,
+            "neopravdaniIzostnci" : 16
+        },
+        "predmeti" : ["matematika", "srpski jezik", "fizičko vaspitanje", "priroda i društvo", "likovna kultura", "muzička kultura", "engleski jezik"],
+        "ocene" : {
+            "matematika" : [4, 2, 2, 3],
+            "srpski jezik" : [4, 2, 3, 5, 4],
+            "fizičko vaspitanje" : [5, 4, 4],
+            "priroda i društvo" : [4, 3],
+            "likovna kultura" : [3, 5, 4],
+            "muzička kultura" : [3, 2, 4, 4],
+            "engleski jezik" : [3, 5, 5, 3]
+        }
+    },
+    {
+        "imePrezime" : "Olga Gavrić",
+        "jmbg" : 2309945230006,
+        "obavestenja" : [],
+        "izostanci" : {
+            "opravdaniIzostanci" : 3,
+            "neopravdaniIzostnci" : 0
+        },
+        "predmeti" : ["matematika", "srpski jezik", "fizičko vaspitanje", "priroda i društvo", "likovna kultura", "muzička kultura", "engleski jezik"],
+        "ocene" : {
+            "matematika" : [4, 5, 5, 3],
+            "srpski jezik" : [4, 3, 5, 5, 4],
+            "fizičko vaspitanje" : [5, 4, 5],
+            "priroda i društvo" : [4, 5],
+            "likovna kultura" : [5, 5, 4],
+            "muzička kultura" : [3, 5, 5, 4],
+            "engleski jezik" : [5, 4, 5, 5]
+        }
+    },
+    {
+        "imePrezime" : "Dimitrije Ocokoljić",
+        "jmbg" : 2309945230006,
+        "obavestenja" : [{
+            "naslov" : "Ukor",
+            "description" : "Pogrdne reči uputio prema drugarici zato što mu nije dozvolila da prepisuje od nje."
+        }],
+        "izostanci" : {
+            "opravdaniIzostanci" : 4,
+            "neopravdaniIzostnci" : 0
+        },
+        "predmeti" : ["matematika", "srpski jezik", "fizičko vaspitanje", "priroda i društvo", "likovna kultura", "muzička kultura", "engleski jezik"],
+        "ocene" : {
+            "matematika" : [4, 5, 4, 3],
+            "srpski jezik" : [4, 3, 3, 2, 4],
+            "fizičko vaspitanje" : [5, 5, 5],
+            "priroda i društvo" : [2, 3],
+            "likovna kultura" : [3, 2, 3],
+            "muzička kultura" : [3, 2, 3, 3],
+            "engleski jezik" : [3, 4, 4, 3]
+        }
+    },
+    {
+        "imePrezime" : "Ivana Korać",
+        "jmbg" : 2309945230006,
+        "obavestenja" : [{
+            "naslov" : "Roditeljski sastanak",
+            "description" : "29.06.2019. godine u 14h će se održati roditeljski sastanak u učionici br. 4."
+        }],
+        "izostanci" : {
+            "opravdaniIzostanci" : 0,
+            "neopravdaniIzostnci" : 0
+        },
+        "predmeti" : ["matematika", "srpski jezik", "fizičko vaspitanje", "priroda i društvo", "likovna kultura", "muzička kultura", "engleski jezik"],
+        "ocene" : {
+            "matematika" : [4, 5, 5, 5],
+            "srpski jezik" : [4, 5, 5, 5, 4],
+            "fizičko vaspitanje" : [5, 4, 5],
+            "priroda i društvo" : [4, 5],
+            "likovna kultura" : [5, 5, 4],
+            "muzička kultura" : [5, 5, 5, 4],
+            "engleski jezik" : [5, 4, 5, 5]
+        }
+    },
+    {
+        "imePrezime" : "Goran Marković",
+        "jmbg" : 2309945230006,
+        "obavestenja" : [{
+            "naslov" : "Školska priredba",
+            "description" : "27.07.2019. godine u 16h će se održati školska priredba u školskoj sali."
+        }],
+        "izostanci" : {
+            "opravdaniIzostanci" : 12,
+            "neopravdaniIzostnci" : 5
+        },
+        "predmeti" : ["matematika", "srpski jezik", "fizičko vaspitanje", "priroda i društvo", "likovna kultura", "muzička kultura", "engleski jezik"],
+        "ocene" : {
+            "matematika" : [4, 5, 4, 3],
+            "srpski jezik" : [4, 3, 5, 5, 4],
+            "fizičko vaspitanje" : [5, 4, 5],
+            "priroda i društvo" : [2, 3],
+            "likovna kultura" : [3, 4, 4],
+            "muzička kultura" : [3, 4, 3, 4],
+            "engleski jezik" : [5, 4, 5, 3]
+        }
+    },
+    {
+        "imePrezime" : "Olja Milošević",
+        "jmbg" : 2309945230006,
+        "obavestenja" : [],
+        "izostanci" : {
+            "opravdaniIzostanci" : 5,
+            "neopravdaniIzostnci" : 0
+        },
+        "predmeti" : ["matematika", "srpski jezik", "fizičko vaspitanje", "priroda i društvo", "likovna kultura", "muzička kultura", "engleski jezik"],
+        "ocene" : {
+            "matematika" : [4, 5, 4, 3],
+            "srpski jezik" : [4, 3, 4, 5, 4],
+            "fizičko vaspitanje" : [5, 5, 5],
+            "priroda i društvo" : [4, 4],
+            "likovna kultura" : [3, 4, 4],
+            "muzička kultura" : [3, 4, 3, 4],
+            "engleski jezik" : [3, 4, 5, 4]
+        }
+    },
+    {
+        "imePrezime" : "Ognjen Vukojević",
+        "jmbg" : 2309945230006,
+        "obavestenja" : [{
+            "naslov" : "Izostanci",
+            "description" : "Ne pojavljuje se na časovima. Jedan od roditelja da dodje u školu na razgovor."
+        },
+        {
+            "naslov" : "Ukor",
+            "description" : "Tuča u blizini školskog dvorišta sa učenicima iz druge škole. Roditelji da se oglase nakon što pročitaju obaveštenje."
+        },
+        {
+            "naslov" : "Domći zadaci",
+            "description" : "Poslednja četiri domaća zadatka nije uradio. Da roditelji porazgovaraju sa njim ili dođu u školu na razgovor sa učiteljicom."
+        }],
+        "izostanci" : {
+            "opravdaniIzostanci" : 43,
+            "neopravdaniIzostnci" : 21
+        },
+        "predmeti" : ["matematika", "srpski jezik", "fizičko vaspitanje", "priroda i društvo", "likovna kultura", "muzička kultura", "engleski jezik"],
+        "ocene" : {
+            "matematika" : [4, 2, 2, 3],
+            "srpski jezik" : [4, 3, 3, 2, 4],
+            "fizičko vaspitanje" : [3, 4, 5],
+            "priroda i društvo" : [2, 3],
+            "likovna kultura" : [3, 2, 3],
+            "muzička kultura" : [3, 2, 3, 2],
+            "engleski jezik" : [3, 4, 3, 3]
+        }
+    },
+    {
+        "imePrezime" : "Milica Maksimović",
+        "jmbg" : 2309945230006,
+        "obavestenja" : [{
+            "naslov" : "Republičko takmičenje",
+            "description" : "20.05.2019. godine će se održati republičko takmičenje iz matematike i Milica će predstavljati našu školu."
+        }],
+        "izostanci" : {
+            "opravdaniIzostanci" : 4,
+            "neopravdaniIzostnci" : 0
+        },
+        "predmeti" : ["matematika", "srpski jezik", "fizičko vaspitanje", "priroda i društvo", "likovna kultura", "muzička kultura", "engleski jezik"],
+        "ocene" : {
+            "matematika" : [5, 5, 5, 5, 5],
+            "srpski jezik" : [4, 3, 5, 5, 4],
+            "fizičko vaspitanje" : [4, 4, 5],
+            "priroda i društvo" : [4, 5],
+            "likovna kultura" : [3, 4, 4],
+            "muzička kultura" : [3, 4, 3, 4],
+            "engleski jezik" : [4, 4, 5, 3]
         }
     }]

@@ -103,27 +103,33 @@ time, mark, audio, video {
     font-size: 28px;
 }
 
+.ucenik + .ucenik {
+    margin-top: 10px;
+}
+
 /* profesor */
 
 .header {
     min-height: 250px;
-    background: url("../media/Children\ banner.jpg");
-    background-size: cover;
+    background: brown url("../media/family.png") no-repeat;
+    background-size: contain;
     position: relative;
     background-position: center;
 }
 
-.nav {
-    justify-content: space-between;
+.nav-bar {
     color: white;
+    position: absolute;
+    bottom: 0;
 }
 
-.nav a {
+.nav-bar a {
     padding: 10px 20px;
     text-transform: uppercase;
     background: gray;
     font-size: 20px;
     cursor: pointer;
+    color: white;
 }
 
 .section-1 h1 {
