@@ -230,9 +230,12 @@ time, mark, audio, video {
     padding: 50px 0;
 }
 
-.izostanci.naslov h3 {
+.izostanci-naslov h3, .izostanci.ukupno h3 {
     padding: 20px;
     font-size: 26px;
+    font-weight: 700;
+    border: 1px solid black;
+    text-align: center;
 }
 
 .izostanci h4 {
@@ -258,12 +261,9 @@ time, mark, audio, video {
     color: red;
 }
 
-.izostanci h3 {
-    font-size: 24px;
-    font-weight: 700;
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
+.opravdani, .neopravdani {
+    justify-content: space-between;
+    align-items: center;
 }
 
 .section-4 .naslov {

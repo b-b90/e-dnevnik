@@ -73,6 +73,23 @@ $(function () {
         $('.izostanci.right span').text(data[redniBroj].izostanci.neopravdaniIzostnci);
         $('.izostanci.ukupno span').text(data[redniBroj].izostanci.opravdaniIzostanci + data[redniBroj].izostanci.neopravdaniIzostnci);
 
+        // dodavanje novih izostanaka
+        $('.izostanci input[type="button"]').on('click', function() {
+            let nizStarih = $(this).parent().parent().find('span');
+            let stari = Number(nizStarih[0].innerText);
+            let dodati = Number($(this).prev().val());
+            let novi = stari + dodati;
+
+            $(nizStarih[0]).text(novi);
+
+            let stariUkupno = Number($('.izostanci.ukupno span').text());
+            $('.izostanci.ukupno span').text(stariUkupno + dodati);
+
+            $(this).parent().next().toggle();
+            $(this).parent().toggle();
+            $(this).prev().val('');
+        })
+
         // predmeti i ocene
         let ukupanProsek = 0;
         let brojPredmeta = data[redniBroj].predmeti.length;
