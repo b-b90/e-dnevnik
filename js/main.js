@@ -103,7 +103,7 @@ $(function () {
             let brojOcena = data[redniBroj].ocene[predmet].length;
 
             for(let i = 0; i < brojOcena; i++) {
-                ocene += `<span>${data[redniBroj].ocene[predmet][i]}</span>`;
+                ocene += `<span>${data[redniBroj].ocene[predmet][i]}<img class="brisi" src="media/delete-20.png" alt="delete"></span>`;
             }
 
             for(let i = 0; i < brojOcena; i++) {
@@ -132,7 +132,7 @@ $(function () {
                                         <input class="nova-ocena" type="number" min="1" max="5" />
                                         <input class="ocena-dodata" type="button" value="OK" />
                                     </div>
-                                    <img class="otvori-dodavanje" src="media/add-ocena.png" alt="">
+                                    <img class="otvori-dodavanje" src="media/add-ocena.png" alt="add">
                                 </div>
                             </div>
                             <div class="col-md-2 cetiri-kolone">
@@ -160,7 +160,7 @@ $(function () {
                                         <input class="nova-ocena" type="number" min="1" max="5" />
                                         <input class="ocena-dodata" type="button" value="OK" />
                                     </div>
-                                    <img class="otvori-dodavanje" src="media/add-ocena.png" alt="">
+                                    <img class="otvori-dodavanje" src="media/add-ocena.png" alt="add">
                                 </div>
                             </div>
                             <div class="col-md-2 cetiri-kolone">
@@ -189,7 +189,7 @@ $(function () {
             let ocena = $(this).prev().val();
 
             if(ocena != '') {
-                $(this).parent().prev().append( `<span>${ocena}</span>`);
+                $(this).parent().prev().append( `<span>${ocena}<img class="brisi" src="media/delete-20.png" alt="delete"></span>`);
                 $(this).parent().next().toggle();
                 $(this).parent().toggle();
                 $(this).prev().val('');
@@ -226,6 +226,16 @@ $(function () {
             ukupnaZakljucna = (ukupnaZakljucna / sveZakljucne.length).toFixed(2);
             $('#ukupan-prosek').text(ukupnaZakljucna);
         })
+
+        // brisanje ocena
+        $(document).on('click', '.ocene span', function() {
+            let nizSlika = $(this).find('img');
+            $(nizSlika[0]).slideToggle();
+        });
+
+        $(document).on('click', '.ocene span img', function() {
+            $(this).parent().remove();
+        });
     }
 
 });
