@@ -1,5 +1,4 @@
 # e-dnevnik
-eDnevnik
 
 
 koriničko ime: prof1
