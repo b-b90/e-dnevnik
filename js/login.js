@@ -8,10 +8,22 @@ $(function () {
         let username = document.getElementById("user").value;
         let password = document.getElementById("pass").value;
 
-        if(username === user && password === pass) {
+        if(username === "" || password ==="") {
+
+            error("<h3>Sva polja moraju biti popunjena!</h3>");
+
+        } else if(username === user && password === pass) {
+
             window.location.replace("./ucenici.html");
             return false;
+            
         } else {
+
+            error("<h3>Niste uneli validan username ili password.<br> Pokušajte ponovo...</h3>");
+        }
+
+        function error(message) {
+            $("#error").html(message);
             $("#error").slideDown();
 
             setTimeout(function () {
