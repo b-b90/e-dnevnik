@@ -1,5 +1,5 @@
     [{
-        "imePrezime" : "Ivan Marić",
+        "imePrezime" : "Marić Ivan",
         "jmbg" : 2309945230006,
         "obavestenja" : [{
             "naslov" : "Izostanci",
@@ -25,7 +25,7 @@
         }
     },
     {
-        "imePrezime" : "Nevena Ilić",
+        "imePrezime" : "Ilić Nevena",
         "jmbg" : 2309945230006,
         "obavestenja" : [{
             "naslov" : "Izostanci",
@@ -47,7 +47,7 @@
         }
     },
     {
-        "imePrezime" : "Marko Rosić",
+        "imePrezime" : "Rosić Marko",
         "jmbg" : 2309945230006,
         "obavestenja" : [{
             "naslov" : "Ukor",
@@ -69,7 +69,7 @@
         }
     },
     {
-        "imePrezime" : "Olga Gavrić",
+        "imePrezime" : "Gavrić Olga",
         "jmbg" : 2309945230006,
         "obavestenja" : [],
         "izostanci" : {
@@ -88,7 +88,7 @@
         }
     },
     {
-        "imePrezime" : "Dimitrije Ocokoljić",
+        "imePrezime" : "Ocokoljić Dimitrije",
         "jmbg" : 2309945230006,
         "obavestenja" : [{
             "naslov" : "Ukor",
@@ -110,7 +110,7 @@
         }
     },
     {
-        "imePrezime" : "Ivana Korać",
+        "imePrezime" : "Korać Ivana",
         "jmbg" : 2309945230006,
         "obavestenja" : [{
             "naslov" : "Roditeljski sastanak",
@@ -132,7 +132,7 @@
         }
     },
     {
-        "imePrezime" : "Goran Marković",
+        "imePrezime" : "Marković Goran",
         "jmbg" : 2309945230006,
         "obavestenja" : [{
             "naslov" : "Školska priredba",
@@ -154,7 +154,7 @@
         }
     },
     {
-        "imePrezime" : "Olja Milošević",
+        "imePrezime" : "Milošević Olja",
         "jmbg" : 2309945230006,
         "obavestenja" : [],
         "izostanci" : {
@@ -173,7 +173,7 @@
         }
     },
     {
-        "imePrezime" : "Ognjen Vukojević",
+        "imePrezime" : "Vukojević Ognjen",
         "jmbg" : 2309945230006,
         "obavestenja" : [{
             "naslov" : "Izostanci",
@@ -203,7 +203,7 @@
         }
     },
     {
-        "imePrezime" : "Milica Maksimović",
+        "imePrezime" : "Maksimović Milica",
         "jmbg" : 2309945230006,
         "obavestenja" : [{
             "naslov" : "Republičko takmičenje",
