@@ -184,6 +184,33 @@ $(function () {
             $(this).toggle();
         })
 
+        // nakon dodavanja ili brisanja neke ocene
+        function menjanjeProseka(ocene, prosekNiz, zakljucnaNiz, sveZakljucne) {
+            let brojOcena = ocene.length;
+            let zbir = 0;
+            let prosek = 0;
+            let zakljucna = 0;
+            let ukupnaZakljucna = 0;
+            
+            for(let i = 0; i < brojOcena; i++) {
+                zbir += Number($(ocene[i]).text());
+            }
+
+            prosek = (zbir / brojOcena).toFixed(2);
+            zakljucna = Math.round(prosek);
+
+            $(prosekNiz[0]).text(prosek);
+
+            $(zakljucnaNiz[0]).text(zakljucna);
+
+            for(let i = 0; i < sveZakljucne.length; i++) {
+                ukupnaZakljucna += Number($(sveZakljucne[i]).text());
+            }
+
+            ukupnaZakljucna = (ukupnaZakljucna / sveZakljucne.length).toFixed(2);
+            $('#ukupan-prosek').text(ukupnaZakljucna);
+        }
+
         // when you add new mark
         $(document).on('click', '.ocena-dodata', function() {
             let ocena = $(this).prev().val();
@@ -198,33 +225,12 @@ $(function () {
             }
 
             let ocene = $(this).parent().prev().find('span');
-            let brojOcena = ocene.length;
-            let zbir = 0;
-            let prosek = 0;
-            let zakljucna = 0;
-            let ukupnaZakljucna = 0;
-            
-            for(let i = 0; i < brojOcena; i++) {
-                zbir += Number($(ocene[i]).text());
-            }
-
-            prosek = (zbir / brojOcena).toFixed(2);
-            zakljucna = Math.round(prosek);
-
             let prosekNiz = $(this).parent().parent().parent().next().find('h3');
-            $(prosekNiz[0]).text(prosek);
-
             let zakljucnaNiz = $(this).parent().parent().parent().next().next().find('h3');
-            $(zakljucnaNiz[0]).text(zakljucna);
-
             let sveZakljucne = $('.predmet').find('.zakljucna-ocena');
 
-            for(let i = 0; i < sveZakljucne.length; i++) {
-                ukupnaZakljucna += Number($(sveZakljucne[i]).text());
-            }
-
-            ukupnaZakljucna = (ukupnaZakljucna / sveZakljucne.length).toFixed(2);
-            $('#ukupan-prosek').text(ukupnaZakljucna);
+            menjanjeProseka(ocene, prosekNiz, zakljucnaNiz, sveZakljucne);
+            
         })
 
         // brisanje ocena
@@ -234,7 +240,18 @@ $(function () {
         });
 
         $(document).on('click', '.ocene span img', function() {
+
+            let p = $(this).parent().parent();
+            let prosekNiz = $(this).parent().parent().parent().parent().next().find('h3');
+            let zakljucnaNiz = $(this).parent().parent().parent().parent().next().next().find('h3');
+            let sveZakljucne = $('.predmet').find('.zakljucna-ocena');
+
             $(this).parent().remove();
+
+            let ocene = $(p).find('span');
+            
+            menjanjeProseka(ocene, prosekNiz, zakljucnaNiz, sveZakljucne);
+
         });
     }
 
