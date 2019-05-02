@@ -46,10 +46,11 @@ $(function () {
     // edit i delete obavestenja
     $(document).on('click', '.naslov-obavestenja', function() {
         let nizObavestenja = $(this).find('.edit-delete-obavestenje');
-        $(nizObavestenja[0]).slideToggle();
+        $(nizObavestenja[0]).slideDown();
     });
 
     $(document).on('click', '.delete-obavestenje', function() {
+        $(this).parent().parent().next().remove();
         $(this).parent().parent().remove();
     });
 
@@ -63,6 +64,7 @@ $(function () {
         document.getElementById('description').value = description;
         $('.obavestenje').slideToggle();
 
+        $(this).parent().parent().next().remove();
         $(this).parent().parent().remove();
     });
 
