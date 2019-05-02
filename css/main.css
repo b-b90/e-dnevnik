@@ -156,6 +156,7 @@ time, mark, audio, video {
     padding: 10px;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .naslov-obavestenja h5 {
@@ -165,6 +166,19 @@ time, mark, audio, video {
 .naslov-obavestenja img {
     cursor: pointer;
     transition: 0.3s;
+}
+
+.edit-delete-obavestenje {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.edit-obavestenje {
+    width: 42px;
+    height: 42px;
 }
 
 .activ-obavestenje {

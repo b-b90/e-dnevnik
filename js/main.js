@@ -23,6 +23,10 @@ $(function () {
                     <div class="naslov-obavestenja d-flex">
                         <h5>${naslov}</h5>
                         <img class="procitaj-obavestenje" src="media/look-down-min.png" alt="">
+                        <div class="edit-delete-obavestenje">
+                            <img class="edit-obavestenje" src="media/edit-50.png" alt="">
+                            <img class="delete-obavestenje" src="media/remove-50.png" alt="">
+                        </div>
                     </div>
                     <div class="description-obavestenja">
                         <p>${description}</p>
@@ -37,6 +41,29 @@ $(function () {
     $(document).on('click', '.procitaj-obavestenje', function() {
         $(this).parent().siblings().slideToggle();
         $(this).toggleClass('activ-obavestenje');
+    });
+
+    // edit i delete obavestenja
+    $(document).on('click', '.naslov-obavestenja', function() {
+        let nizObavestenja = $(this).find('.edit-delete-obavestenje');
+        $(nizObavestenja[0]).slideToggle();
+    });
+
+    $(document).on('click', '.delete-obavestenje', function() {
+        $(this).parent().parent().remove();
+    });
+
+    $(document).on('click', '.edit-obavestenje', function() {
+
+        let naslov = $(this).parent().prev().prev().text();
+        let descriptionNiz = $(this).parent().parent().next().find('p');
+        let description = $(descriptionNiz[0]).text();
+    
+        document.getElementById('naslov').value = naslov;
+        document.getElementById('description').value = description;
+        $('.obavestenje').slideToggle();
+
+        $(this).parent().parent().remove();
     });
 
     // get data about pupil
@@ -59,6 +86,10 @@ $(function () {
                     <div class="naslov-obavestenja d-flex">
                         <h5>${naslov}</h5>
                         <img class="procitaj-obavestenje" src="media/look-down-min.png" alt="">
+                        <div class="edit-delete-obavestenje">
+                            <img class="edit-obavestenje" src="media/edit-50.png" alt="">
+                            <img class="delete-obavestenje" src="media/remove-50.png" alt="">
+                        </div>
                     </div>
                     <div class="description-obavestenja">
                         <p>${description}</p>
