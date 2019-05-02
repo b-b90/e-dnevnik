@@ -20,6 +20,7 @@ time, mark, audio, video {
     border: 0;
     font-size: 100%;
     font: inherit;
+    font-family: 'Anonymous Pro', monospace;
 }
 
 .home-background {
@@ -342,7 +343,7 @@ time, mark, audio, video {
 }
 
 .ocene span {
-    padding: 6px 13px;
+    padding: 8px 13px 8px 16px;
     border: 1px solid gray;
     border-radius: 50%;
     margin-top: 5px;

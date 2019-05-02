@@ -172,7 +172,7 @@ $(function () {
                                 <h3>${prosek}</h3>
                             </div>
                             <div class="col-md-2 cetiri-kolone">
-                                <h4 class="mali-ekran">Zakljucna ocena</h4>
+                                <h4 class="mali-ekran">Zaključna ocena</h4>
                                 <h3 class="zakljucna-ocena">${zakljucnaOcena}</h3>
                             </div>
                         </div>
