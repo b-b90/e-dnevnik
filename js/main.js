@@ -15,8 +15,8 @@ $(function () {
 
         if (naslov != '' && description != '') {
             $('.obavestenje').slideToggle();
-            $('#description').val(' ');
-            $('#naslov').val(' ');
+            $('#description').val('');
+            $('#naslov').val('');
 
             $('.okvir').prepend(`
                 <div class="staro-obavestenje">
@@ -45,7 +45,6 @@ $(function () {
         .then(data => dataWork(data))
 
     function dataWork (data) {
-        console.log(data);
 
         // ime prezime
         $('#ime-prezime').text(data[redniBroj].imePrezime);
