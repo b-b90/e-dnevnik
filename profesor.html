@@ -21,83 +21,87 @@
         </div>
     </section>
 
-    <section class="section-1">
-        <div class="container">
-            <h1 id="ime-prezime"></h1>
-        </div>
-    </section>
-
-    <section class="section-2">
-        <div class="container">
-            <h4>Obaveštenja:</h4>
-            <div class="okvir">
-                <div class="dodaj-obavestenje d-flex">
-                    <h5>Dodajte novo obaveštenje:</h5>
-                    <img id="dodaj-obavestenje" src="media/dodaj-obavestenje.png" alt="">
-                </div>
-                <div class="obavestenje">
-                    <input type="text" id="naslov" placeholder="Naslov">
-                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
-                    <div class="dodaj">
-                        <input id="dodaj-novo-obavestenje" type="button" value="Dodaj">
-                    </div>
-                </div>
+    <div class="for-background">
+        <section class="section-1">
+            <div class="container">
+                <h1 id="ime-prezime"></h1>
             </div>
-        </div>
-    </section>
-
-    <section class="section-3">
-        <div class="container">
-            <div class="izostanci-naslov">
-                <h3>IZOSTANCI</h3>
-            </div>
-            <div class="row">
-                <div class="col-md-6 izostanci left">
-                    <div class="opravdani d-flex">
-                        <h4>Opravdani izostanci: <span></span></h4>
-                        <div class="dodavanje-ocene">
-                            <input class="novi-izostanci" type="number" />
-                            <input class="izostanci-dodati" type="button" value="OK" />
+        </section>
+    
+        <section class="section-2">
+            <div class="container">
+                <div class="sva-obavestenja">
+                    <h4>Obaveštenja:</h4>
+                    <div class="okvir">
+                        <div class="dodaj-obavestenje d-flex">
+                            <h5>Dodajte novo obaveštenje:</h5>
+                            <img id="dodaj-obavestenje" src="media/dodaj-obavestenje.png" alt="">
                         </div>
-                        <img class="otvori-dodavanje" src="media/add-ocena.png" alt="">
-                    </div>
-                </div>
-                <div class="col-md-6 izostanci right">
-                    <div class="neopravdani d-flex">
-                        <h4>Neopravdani izostanci: <span></span></h4>
-                        <div class="dodavanje-ocene">
-                            <input class="novi-izostanci" type="number" />
-                            <input class="izostanci-dodati" type="button" value="OK" />
+                        <div class="obavestenje">
+                            <input type="text" id="naslov" placeholder="Naslov">
+                            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                            <div class="dodaj">
+                                <input id="dodaj-novo-obavestenje" type="button" value="Dodaj">
+                            </div>
                         </div>
-                        <img class="otvori-dodavanje" src="media/add-ocena.png" alt="">
                     </div>
                 </div>
             </div>
-            <div class="izostanci ukupno">
-                <h3>Ukupni izostanci: <span></span></h3>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-4">
-        <div class="container">
-            <div id="predmeti">
-                <div class="naslov">
-                    <h3>Predmeti</h3>
+        </section>
+    
+        <section class="section-3">
+            <div class="container">
+                <div class="izostanci-naslov">
+                    <h3>IZOSTANCI</h3>
                 </div>
-            </div>
-            <div class="predmeti-footer">
                 <div class="row">
-                    <div class="col-md-8">
-                        <h3>Ukupan prosek:</h3>
+                    <div class="col-md-6 izostanci left">
+                        <div class="opravdani d-flex">
+                            <h4>Opravdani izostanci: <span></span></h4>
+                            <div class="dodavanje-ocene">
+                                <input class="novi-izostanci" type="number" />
+                                <input class="izostanci-dodati" type="button" value="OK" />
+                            </div>
+                            <img class="otvori-dodavanje" src="media/add-ocena.png" alt="">
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <h2 id="ukupan-prosek"></h2>
+                    <div class="col-md-6 izostanci right">
+                        <div class="neopravdani d-flex">
+                            <h4>Neopravdani izostanci: <span></span></h4>
+                            <div class="dodavanje-ocene">
+                                <input class="novi-izostanci" type="number" />
+                                <input class="izostanci-dodati" type="button" value="OK" />
+                            </div>
+                            <img class="otvori-dodavanje" src="media/add-ocena.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="izostanci ukupno">
+                    <h3>Ukupni izostanci: <span></span></h3>
+                </div>
+            </div>
+        </section>
+    
+        <section class="section-4">
+            <div class="container">
+                <div id="predmeti">
+                    <div class="naslov">
+                        <h3>Predmeti</h3>
+                    </div>
+                </div>
+                <div class="predmeti-footer">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h3>Ukupan prosek:</h3>
+                        </div>
+                        <div class="col-md-4">
+                            <h2 id="ukupan-prosek"></h2>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

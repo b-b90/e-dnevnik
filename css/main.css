@@ -24,10 +24,12 @@ time, mark, audio, video {
 }
 
 .home-background {
-    background: url('../media/home-background-min.jpg');
+    background: #334a6d; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #334a6d 0%, #001d49 30%, #001d49 70%, #334a6d 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #334a6d 0%,#001d49 30%,#001d49 70%,#334a6d 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #334a6d 0%,#001d49 30%,#001d49 70%,#334a6d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#334a6d', endColorstr='#334a6d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     height: 100vh;
-    background-size: cover;
-    background-position: center;
     position: relative;
 }
 
@@ -37,23 +39,23 @@ time, mark, audio, video {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 2px solid greenyellow;
+    border: 2px solid #E5E500;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    background: brown;
+    background: #001D49;
     opacity: 0.9;
 }
 
 .login-form input {
     margin-bottom: 30px;
     opacity: 1;
-    background: brown;
+    background: #001D49;
     border: 0;
     padding: 5px;
     outline: none;
-    color: greenyellow;
-    border-bottom: 2px solid yellow;
+    color: #E5E500;
+    border-bottom: 2px solid #E5E500;
 }
 
 .login-form input::placeholder {
@@ -62,7 +64,7 @@ time, mark, audio, video {
 }
 
 .login-form input[type="submit"] {
-    border: 1px solid yellow;
+    border: 1px solid #E5E500;
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 20px;
@@ -73,26 +75,31 @@ time, mark, audio, video {
 }
 
 .login-form input[type="submit"]:hover {
-    background: greenyellow;
-    color: brown;
+    background: #E5E500;
+    color: #001D49;
 }
 
 .login-form #error {
     text-align: center;
-    color: red;
+    color: white;
     font-size: 18px;
     font-weight: 700;
-    background: white;
+    background: brown;
     border-radius: 5px;
     padding: 10px;
     display: none;
-    max-width: 204px;
+    max-width: 240px;
 }
 
 /* ucenici */
 
 .ucenici-section-1 {
     padding: 70px 0;
+    background: #001d49; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #001d49 0%, #334a6d 25%, #334a6d 75%, #001d49 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #001d49 0%,#334a6d 25%,#334a6d 75%,#001d49 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #001d49 0%,#334a6d 25%,#334a6d 75%,#001d49 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001d49', endColorstr='#001d49',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .ucenici-section-1 h2 {
@@ -100,6 +107,33 @@ time, mark, audio, video {
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 50px;
+    color: white;
+}
+
+#po-redu {
+    background: #001D49;
+    color: white;
+    font-size: 18px;
+    border: 0;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+label {
+    font-size: 18px;
+    letter-spacing: 1px;
+    background: #001D49;
+    color: white;
+    padding: 10px 15px;
+}
+
+#search {
+    font-size: 18px;
+    height: 38px;
+    padding-left: 5px;
+    border: 0;
+    border-bottom: 2px solid #001D49;
+    border-top: 2px solid #001D49;
 }
 
 .ucenik {
@@ -111,9 +145,28 @@ time, mark, audio, video {
     margin-top: 10px;
 }
 
+.ucenik a {
+    color: white;
+}
+
 .pretraga {
     justify-content: center;
     margin-bottom: 50px;
+    align-items: center;
+}
+
+footer {
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+    padding: 20px;
+    background: brown;
+    color: white;
+    letter-spacing: 2px;
+}
+
+footer img {
+    height: 40px;
 }
 
 /* profesor */
@@ -135,44 +188,68 @@ time, mark, audio, video {
 .nav-bar a {
     padding: 10px 20px;
     text-transform: uppercase;
-    background: gray;
+    background: #001D49;
     font-size: 20px;
     cursor: pointer;
     color: white;
     width: 150px;
     text-align: center;
     letter-spacing: 2px;
+    font-weight: 700;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .nav-bar a + a {
     margin-left: 10px;
 }
 
+.for-background {
+    letter-spacing: 1px;
+    color: #001D49;
+}
+
 .section-1 h1 {
     text-align: center;
     font-size: 40px;
+    font-weight: 700;
+    color: white;
 }
 
 .section-2 h4 {
-    border: 1px solid black;
-    padding: 10px;
-    font-size: 24px;
+    border-bottom: 10px solid brown;
+    padding: 20px 10px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.section-2 .sva-obavestenja {
+    border-top: 40px solid brown;
+    border-bottom: 40px solid brown;
+    border-left: 10px solid brown;
+    border-right: 10px solid brown;
+    border-radius: 10px;
+}
+
+.description-obavestenja p {
+    font-size: 18px;
 }
 
 .naslov-obavestenja {
-    border: 1px solid black;
+    border-bottom: 5px solid brown;
     padding: 10px;
     justify-content: space-between;
     align-items: center;
 }
 
 .naslov-obavestenja h5 {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .naslov-obavestenja img {
     cursor: pointer;
     transition: 0.3s;
+    height: 40px;
 }
 
 .edit-delete-obavestenje {
@@ -184,11 +261,11 @@ time, mark, audio, video {
 
 .edit-delete-obavestenje img {
     cursor: pointer;
+    height: 40px;
 }
 
-.edit-obavestenje {
-    width: 42px;
-    height: 42px;
+.edit-delete-obavestenje .edit-obavestenje {
+    height: 34px;
 }
 
 .activ-obavestenje {
@@ -197,29 +274,29 @@ time, mark, audio, video {
 
 .description-obavestenja {
     padding: 10px;
-    border: 1px solid black;
     font-size: 18px;
     display: none;
+    border-bottom: 20px solid brown;
 }
 
 .dodaj-obavestenje {
-    border: 1px solid black;
-    padding: 10px;
+    padding: 15px 10px;
     justify-content: space-between;
     align-items: center;
 }
 
 .dodaj-obavestenje h5 {
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .dodaj-obavestenje img {
     cursor: pointer;
+    height: 40px;
 }
 
 .obavestenje {
     display: none;
-    margin-top: 20px;
+    margin: 10px;
 }
 
 .obavestenje h5 {
@@ -243,11 +320,12 @@ time, mark, audio, video {
 .obavestenje input[type="button"] {
     text-transform: uppercase;
     font-size: 18px;
-    padding: 10px 20px;
-    background: green;
+    padding: 8px 15px;
+    background: #001D49;
     color: white;
     border: 0;
     cursor: pointer;
+    letter-spacing: 2px;
 }
 
 .section-1, .section-2, .section-3, .section-4 {
@@ -449,5 +527,20 @@ time, mark, audio, video {
 
     .ocene img {
         align-self: flex-end;
+    }
+
+    .pretraga {
+        flex-direction: column-reverse;
+        justify-content: center;
+        margin-bottom: 50px;
+        align-items: center;
+    }
+
+    #po-redu {
+        margin-bottom: 10px;
+    }
+    
+    #search {
+        border-right: 2px solid #001D49;
     }
 }
