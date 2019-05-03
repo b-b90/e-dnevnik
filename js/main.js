@@ -23,13 +23,13 @@ $(function () {
                     <div class="naslov-obavestenja d-flex">
                         <h5>${naslov}</h5>
                         <img class="procitaj-obavestenje" src="media/look-down-min.png" alt="">
+                    </div>
+                    <div class="description-obavestenja">
+                        <p>${description}</p>
                         <div class="edit-delete-obavestenje">
                             <img class="edit-obavestenje" src="media/edit-50.png" alt="">
                             <img class="delete-obavestenje" src="media/remove-50.png" alt="">
                         </div>
-                    </div>
-                    <div class="description-obavestenja">
-                        <p>${description}</p>
                     </div>
                 </div>
             `);
@@ -44,28 +44,21 @@ $(function () {
     });
 
     // edit i delete obavestenja
-    $(document).on('click', '.naslov-obavestenja', function() {
-        let nizObavestenja = $(this).find('.edit-delete-obavestenje');
-        $(nizObavestenja[0]).slideDown();
-    });
-
     $(document).on('click', '.delete-obavestenje', function() {
-        $(this).parent().parent().next().remove();
-        $(this).parent().parent().remove();
+        $(this).parent().parent().parent().remove();
     });
 
     $(document).on('click', '.edit-obavestenje', function() {
 
-        let naslov = $(this).parent().prev().prev().text();
-        let descriptionNiz = $(this).parent().parent().next().find('p');
-        let description = $(descriptionNiz[0]).text();
+        let naslovNiz = $(this).parent().parent().prev().find('h5');
+        let naslov = $(naslovNiz[0]).text();
+        let description = $(this).parent().prev().text();
     
         document.getElementById('naslov').value = naslov;
         document.getElementById('description').value = description;
         $('.obavestenje').slideToggle();
 
-        $(this).parent().parent().next().remove();
-        $(this).parent().parent().remove();
+        $(this).parent().parent().parent().remove();
     });
 
     // get data about pupil
@@ -88,13 +81,13 @@ $(function () {
                     <div class="naslov-obavestenja d-flex">
                         <h5>${naslov}</h5>
                         <img class="procitaj-obavestenje" src="media/look-down-min.png" alt="">
+                    </div>
+                    <div class="description-obavestenja">
+                        <p>${description}</p>
                         <div class="edit-delete-obavestenje">
                             <img class="edit-obavestenje" src="media/edit-50.png" alt="">
                             <img class="delete-obavestenje" src="media/remove-50.png" alt="">
                         </div>
-                    </div>
-                    <div class="description-obavestenja">
-                        <p>${description}</p>
                     </div>
                 </div>
             `);
@@ -112,14 +105,18 @@ $(function () {
             let dodati = Number($(this).prev().val());
             let novi = stari + dodati;
 
-            $(nizStarih[0]).text(novi);
+            if(novi < 0) {
+                alert('Ne moze broj izostanaka da bude negativan.')
+            } else {
+                $(nizStarih[0]).text(novi);
 
-            let stariUkupno = Number($('.izostanci.ukupno span').text());
-            $('.izostanci.ukupno span').text(stariUkupno + dodati);
+                let stariUkupno = Number($('.izostanci.ukupno span').text());
+                $('.izostanci.ukupno span').text(stariUkupno + dodati);
 
-            $(this).parent().next().toggle();
-            $(this).parent().toggle();
-            $(this).prev().val('');
+                $(this).parent().next().toggle();
+                $(this).parent().toggle();
+                $(this).prev().val('');
+            }
         })
 
         // predmeti i ocene
@@ -247,13 +244,15 @@ $(function () {
         $(document).on('click', '.ocena-dodata', function() {
             let ocena = $(this).prev().val();
 
-            if(ocena != '') {
+            if(ocena === '') {
+                alert('Niste uneli ocenu.')
+            } else if(ocena < 1 || ocena > 5) {
+                alert('Uneta ocena mora da bude od 1 do 5.')
+            } else  if(ocena != '') {
                 $(this).parent().prev().append( `<span>${ocena}<img class="brisi" src="media/delete-20.png" alt="delete"></span>`);
                 $(this).parent().next().toggle();
                 $(this).parent().toggle();
                 $(this).prev().val('');
-            } else {
-                alert('Niste uneli ocenu.')
             }
 
             let ocene = $(this).parent().prev().find('span');

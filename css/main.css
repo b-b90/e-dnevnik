@@ -139,6 +139,13 @@ time, mark, audio, video {
     font-size: 20px;
     cursor: pointer;
     color: white;
+    width: 150px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.nav-bar a + a {
+    margin-left: 10px;
 }
 
 .section-1 h1 {
@@ -157,7 +164,6 @@ time, mark, audio, video {
     padding: 10px;
     justify-content: space-between;
     align-items: center;
-    position: relative;
 }
 
 .naslov-obavestenja h5 {
@@ -170,11 +176,14 @@ time, mark, audio, video {
 }
 
 .edit-delete-obavestenje {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.edit-delete-obavestenje img {
+    cursor: pointer;
 }
 
 .edit-obavestenje {
@@ -187,7 +196,7 @@ time, mark, audio, video {
 }
 
 .description-obavestenja {
-    padding: 20px 10px;
+    padding: 10px;
     border: 1px solid black;
     font-size: 18px;
     display: none;
