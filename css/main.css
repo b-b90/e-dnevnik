@@ -213,7 +213,7 @@ footer img {
     text-align: center;
     font-size: 40px;
     font-weight: 700;
-    color: white;
+    color: #001D49;
 }
 
 .section-2 h4 {
@@ -223,7 +223,7 @@ footer img {
     font-weight: 700;
 }
 
-.section-2 .sva-obavestenja {
+.section-2 .sva-obavestenja, .section-3 .svi-izostanci, .section-4 .svi-predmeti {
     border-top: 40px solid brown;
     border-bottom: 40px solid brown;
     border-left: 10px solid brown;
@@ -334,20 +334,18 @@ footer img {
 
 .izostanci-naslov h3, .izostanci.ukupno h3 {
     padding: 20px;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
-    border: 1px solid black;
+    border-bottom: 10px solid brown;
     text-align: center;
 }
 
 .izostanci h4 {
-    font-size: 22px;
-    border: 1px solid black;
-    padding: 10px;
+    font-size: 24px;
 }
 
 .izostanci h4 span {
-    font-size: 24px;
+    font-size: inherit;
     font-weight: 700;
 }
 
@@ -363,27 +361,42 @@ footer img {
     color: red;
 }
 
+.izostanci + .izostanci {
+    border-left: 5px solid brown;
+}
+
+.izostanci img {
+    height: 40px;
+}
+
 .opravdani, .neopravdani {
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
+    border-bottom: 5px solid brown;
+    min-height: 65px;
 }
 
 .section-4 .naslov {
-    font-size: 24px;
+    font-size: 28px;
     text-transform: uppercase;
     font-weight: 700;
     text-align: center;
     padding: 20px;
-    border: 1px solid black;
+    border-bottom: 10px solid brown;
 }
 
-.section-4 .predmet h4 {
-    font-size: 22px;
-    padding: 20px 10px;
-    border: 1px solid black;
+.section-4 .predmet-header h4 {
+    font-size: 24px;
+    padding: 15px;
+    border-bottom: 5px solid brown;
     font-weight: 700;
     text-align: center;
-    min-height: 94px;
+    min-height: 83px;
+}
+
+.cetiri-kolone + .cetiri-kolone h4 {
+    border-left: 5px solid brown;
 }
 
 .cetiri-kolone {
@@ -399,30 +412,42 @@ footer img {
 }
 
 .section-4 h5 {
-    font-size: 22px;
-    padding: 10px;
-    border: 1px solid black;
+    font-size: 24px;
     text-transform: capitalize;
 }
 
+.naziv-predmeta {
+    padding: 0 10px;
+    align-items: center;
+    height: 100%;
+}
+
+.prosek-predmeta, .zakljucna-predmeta {
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    border-left: 5px solid brown;
+}
+
 .cetiri-kolone h3 {
-    font-size: 22px;
-    padding: 10px;
-    border: 1px solid black;
-    text-align: center;
+    font-size: 24px;
     font-weight: 700;
 }
 
 .cetiri-kolone p {
     font-size: 22px;
-    padding: 10px;
 }
 
 .ocene {
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
+    border-left: 5px solid brown;
+    padding: 10px;
 }
+
+.predmet + .predmet .ocene, .predmet + .predmet .naziv-predmeta, .predmet + .predmet .prosek-predmeta, .predmet + .predmet .zakljucna-predmeta {
+    border-top: 5px solid brown;
+} 
 
 .ocene p {
     display: flex;
@@ -431,7 +456,7 @@ footer img {
 
 .ocene span {
     padding: 8px 13px 8px 16px;
-    border: 1px solid gray;
+    border: 1px solid #001D49;
     border-radius: 50%;
     margin-top: 5px;
     position: relative;
@@ -451,19 +476,17 @@ footer img {
 }
 
 .ocene img {
-    width: 46px;
-    height: 46px;
+    height: 40px;
     cursor: pointer;
-    margin-right: 10px;
 }
 
 .dodavanje-ocene {
     display: none;
-    margin-right: 10px;
 }
 
 .dodavanje-ocene input {
     width: 50px;
+    height: 24px;
 }
 
 .dodavanje-ocene input[type="number"] {
@@ -472,18 +495,26 @@ footer img {
 
 .dodavanje-ocene input[type="button"] {
     cursor: pointer;
+    font-size: 18px;
+    border: 0;
+    background: #001D49;
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
 }
 
 .predmeti-footer h3 {
-    font-size: 26px;
+    font-size: 28px;
     padding: 20px 10px;
-    border: 1px solid black;
+    border-top: 10px solid brown;
+    font-weight: 700;
 }
 
 .predmeti-footer h2 {
-    font-size: 26px;
+    font-size: 28px;
     padding: 20px;
-    border: 1px solid black;
+    border-top: 10px solid brown;
+    border-left: 5px solid brown;
     font-weight: 700;
     text-align: center;
 }
@@ -526,7 +557,7 @@ footer img {
     }
 
     .ocene img {
-        align-self: flex-end;
+        align-self: center;
     }
 
     .pretraga {
@@ -542,5 +573,38 @@ footer img {
     
     #search {
         border-right: 2px solid #001D49;
+    }
+
+    .izostanci + .izostanci {
+        border-left: 0;
+    }    
+
+    .ocene, .prosek-predmeta, .zakljucna-predmeta {
+        border-left: 0;
+        border-top: 5px solid brown;
+        padding: 10px;
+    }
+
+    .naziv-predmeta {
+        padding: 20px 10px 10px;
+    }
+
+    .predmet + .predmet .naziv-predmeta {
+        border-top: 10px solid #001D49;
+    }
+
+    .predmeti-footer h2 {
+        border-left: 0;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .opravdani, .neopravdani {
+        flex-direction: column;
+    }
+
+    .izostanci h4 {
+        font-size: 20px;
+        margin-bottom: 20px;
     }
 }

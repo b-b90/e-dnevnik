@@ -145,63 +145,37 @@ $(function () {
 
             ukupanProsek += zakljucnaOcena;
 
-            if(i === 0) {
-                $('#predmeti').append(`
-                    <div class="predmet">
-                        <div class="row">
-                            <div class="col-md-3 cetiri-kolone">
-                                <h4 class="mali-ekran">Naziv</h4>
+            $('#predmeti').append(`
+                <div class="predmet">
+                    <div class="row">
+                        <div class="col-md-3 cetiri-kolone">
+                            <div class="naziv-predmeta d-flex">
                                 <h5>${predmet}</h5>
                             </div>
-                            <div class="col-md-5 cetiri-kolone">
-                                <h4 class="mali-ekran">Ocene</h4>
-                                <div class="d-flex ocene">
-                                    <p>${ocene}</p>
-                                    <div class="dodavanje-ocene">
-                                        <input class="nova-ocena" type="number" min="1" max="5" />
-                                        <input class="ocena-dodata" type="button" value="OK" />
-                                    </div>
-                                    <img class="otvori-dodavanje" src="media/add-ocena.png" alt="add">
+                        </div>
+                        <div class="col-md-5 cetiri-kolone">
+                            <div class="d-flex ocene">
+                                <p>${ocene}</p>
+                                <div class="dodavanje-ocene">
+                                    <input class="nova-ocena" type="number" min="1" max="5" />
+                                    <input class="ocena-dodata" type="button" value="OK" />
                                 </div>
+                                <img class="otvori-dodavanje" src="media/add-ocena.png" alt="add">
                             </div>
-                            <div class="col-md-2 cetiri-kolone">
-                                <h4 class="mali-ekran">Prosek</h4>
+                        </div>
+                        <div class="col-md-2 cetiri-kolone">
+                            <div class="prosek-predmeta d-flex">
                                 <h3>${prosek}</h3>
                             </div>
-                            <div class="col-md-2 cetiri-kolone">
-                                <h4 class="mali-ekran">Zaključna ocena</h4>
+                        </div>
+                        <div class="col-md-2 cetiri-kolone">
+                            <div class="zakljucna-predmeta d-flex">
                                 <h3 class="zakljucna-ocena">${zakljucnaOcena}</h3>
                             </div>
                         </div>
                     </div>
-                `)
-            } else {
-                $('#predmeti').append(`
-                    <div class="predmet">
-                        <div class="row">
-                            <div class="col-md-3 cetiri-kolone">
-                                <h5>${predmet}</h5>
-                            </div>
-                            <div class="col-md-5 cetiri-kolone">
-                                <div class="d-flex ocene">
-                                    <p>${ocene}</p>
-                                    <div class="dodavanje-ocene">
-                                        <input class="nova-ocena" type="number" min="1" max="5" />
-                                        <input class="ocena-dodata" type="button" value="OK" />
-                                    </div>
-                                    <img class="otvori-dodavanje" src="media/add-ocena.png" alt="add">
-                                </div>
-                            </div>
-                            <div class="col-md-2 cetiri-kolone">
-                                <h3>${prosek}</h3>
-                            </div>
-                            <div class="col-md-2 cetiri-kolone">
-                                <h3 class="zakljucna-ocena">${zakljucnaOcena}</h3>
-                            </div>
-                        </div>
-                    </div>
-                `)
-            }
+                </div>
+            `);
         }
 
         ukupanProsek = (ukupanProsek / brojPredmeta).toFixed(2);
