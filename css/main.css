@@ -629,4 +629,8 @@ footer img {
         font-size: 20px;
         margin-bottom: 20px;
     }
+
+    .login-form {
+        padding: 80px 60px;
+    }
 }
