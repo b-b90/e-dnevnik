@@ -148,12 +148,12 @@ $(function () {
             $('#predmeti').append(`
                 <div class="predmet">
                     <div class="row">
-                        <div class="col-md-3 cetiri-kolone">
+                        <div class="col-lg-3 cetiri-kolone">
                             <div class="naziv-predmeta d-flex">
                                 <h5>${predmet}</h5>
                             </div>
                         </div>
-                        <div class="col-md-5 cetiri-kolone">
+                        <div class="col-lg-5 cetiri-kolone">
                             <div class="d-flex ocene">
                                 <p>${ocene}</p>
                                 <div class="dodavanje-ocene">
@@ -163,12 +163,12 @@ $(function () {
                                 <img class="otvori-dodavanje" src="media/add-ocena.png" alt="add">
                             </div>
                         </div>
-                        <div class="col-md-2 cetiri-kolone">
+                        <div class="col-lg-2 cetiri-kolone">
                             <div class="prosek-predmeta d-flex">
                                 <h3>${prosek}</h3>
                             </div>
                         </div>
-                        <div class="col-md-2 cetiri-kolone">
+                        <div class="col-lg-2 cetiri-kolone">
                             <div class="zakljucna-predmeta d-flex">
                                 <h3 class="zakljucna-ocena">${zakljucnaOcena}</h3>
                             </div>

@@ -527,7 +527,7 @@ footer img {
     padding-left: 0;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
     .izostanci.left {
         padding-right: 15px;
     }
@@ -587,6 +587,7 @@ footer img {
 
     .naziv-predmeta {
         padding: 20px 10px 10px;
+        justify-content: center;
     }
 
     .predmet + .predmet .naziv-predmeta {
@@ -595,6 +596,22 @@ footer img {
 
     .predmeti-footer h2 {
         border-left: 0;
+    }
+
+    .ocene {
+        flex-direction: column;
+    }
+
+    .ocene img {
+        margin-top: 20px;
+    }
+
+    .dodavanje-ocene {
+        margin-top: 20px;
+    }
+
+    .predmeti-footer h3 {
+        text-align: center;
     }
 }
 
