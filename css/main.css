@@ -452,6 +452,7 @@ footer img {
 .ocene p {
     display: flex;
     flex-wrap: wrap;
+    max-width: 75%;
 }
 
 .ocene span {
@@ -612,6 +613,10 @@ footer img {
 
     .predmeti-footer h3 {
         text-align: center;
+    }
+
+    .ocene p {
+        max-width: 100%;
     }
 }
 
