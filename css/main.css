@@ -100,7 +100,13 @@ time, mark, audio, video {
     background: -webkit-linear-gradient(-45deg, #001d49 0%,#334a6d 25%,#334a6d 75%,#001d49 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(135deg, #001d49 0%,#334a6d 25%,#334a6d 75%,#001d49 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001d49', endColorstr='#001d49',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    min-height: 639px;
+    flex: 1;
+}
+
+.full-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .ucenici-section-1 h2 {
@@ -683,10 +689,6 @@ footer img {
 
     .ocene span:nth-child(10) {
         margin-left: 5px;
-    }
-
-    .ucenici-section-1 {
-        min-height: auto;
     }
 
     .header {
