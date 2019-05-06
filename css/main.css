@@ -100,6 +100,7 @@ time, mark, audio, video {
     background: -webkit-linear-gradient(-45deg, #001d49 0%,#334a6d 25%,#334a6d 75%,#001d49 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(135deg, #001d49 0%,#334a6d 25%,#334a6d 75%,#001d49 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001d49', endColorstr='#001d49',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    min-height: 639px;
 }
 
 .ucenici-section-1 h2 {
@@ -227,7 +228,7 @@ footer img {
     border-top: 40px solid brown;
     border-bottom: 40px solid brown;
     border-left: 10px solid brown;
-    border-right: 10px solid brown;
+    border-right: 11px solid brown;
     border-radius: 10px;
 }
 
@@ -328,8 +329,12 @@ footer img {
     letter-spacing: 2px;
 }
 
-.section-1, .section-2, .section-3, .section-4 {
+.section-1, .section-2, .section-3 {
     padding: 50px 0;
+}
+
+.section-4 {
+    padding: 50px 0 100px;
 }
 
 .izostanci-naslov h3, .izostanci.ukupno h3 {
@@ -466,14 +471,19 @@ footer img {
 .ocene span img {
     position: absolute;
     top: -10px;
-    right: -20px;
+    right: -10px;
     width: 20px;
     height: 20px;
     display: none;
+    cursor: pointer;
 }
 
 .ocene span + span {
     margin-left: 5px;
+}
+
+.ocene span:nth-child(7), .ocene span:nth-child(13) {
+    margin-left: 0;
 }
 
 .ocene img {
@@ -528,6 +538,16 @@ footer img {
     padding-left: 0;
 }
 
+@media screen and (max-width: 1199px) {
+    .ocene span:nth-child(7) {
+        margin-left: 5px;
+    }
+
+    .ocene span:nth-child(6) {
+        margin-left: 0;
+    }
+}
+
 @media screen and (max-width: 991px) {
     .izostanci.left {
         padding-right: 15px;
@@ -551,10 +571,6 @@ footer img {
 
     .mali-ekran {
         display: none;
-    }
-
-    .ocene span:nth-child(7) {
-        margin-left: 0;
     }
 
     .ocene img {
@@ -618,6 +634,33 @@ footer img {
     .ocene p {
         max-width: 100%;
     }
+
+    .ocene span:nth-child(6) {
+        margin-left: 5px;
+    }
+
+    .ocene span:nth-child(14) {
+        margin-left: 0;
+    }
+
+    .ocene span img {
+        top: -30px;
+        right: -10px;
+    }
+
+    .predmeti-footer h2 {
+        border-top: 5px solid brown;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .ocene span:nth-child(14) {
+        margin-left: 5px;
+    }
+
+    .ocene span:nth-child(10) {
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -626,11 +669,27 @@ footer img {
     }
 
     .izostanci h4 {
-        font-size: 20px;
+        font-size: 19px;
         margin-bottom: 20px;
     }
 
     .login-form {
         padding: 80px 60px;
+    }
+
+    .ocene span:nth-child(7), .ocene span:nth-child(13) {
+        margin-left: 0;
+    }
+
+    .ocene span:nth-child(10) {
+        margin-left: 5px;
+    }
+
+    .ucenici-section-1 {
+        min-height: auto;
+    }
+
+    .header {
+        min-height: 210px;
     }
 }

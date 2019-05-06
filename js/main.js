@@ -6,7 +6,7 @@ $(function () {
     $('#dodaj-obavestenje').on('click', function() {
 
         $('.obavestenje').slideToggle();
-    })
+    });
 
     // add new notification
     $('#dodaj-novo-obavestenje').on('click', function() {
@@ -36,7 +36,7 @@ $(function () {
         } else {
             alert('Popunite sva polja pa pokusajte ponovo.')
         }
-    })
+    });
     
     $(document).on('click', '.procitaj-obavestenje', function() {
         $(this).parent().siblings().slideToggle();
@@ -45,7 +45,9 @@ $(function () {
 
     // edit i delete obavestenja
     $(document).on('click', '.delete-obavestenje', function() {
-        $(this).parent().parent().parent().remove();
+        if(confirm('Da li ste sigurni da želite da izbrišete obaveštenje?')) {
+            $(this).parent().parent().parent().remove();
+        }
     });
 
     $(document).on('click', '.edit-obavestenje', function() {
@@ -117,7 +119,7 @@ $(function () {
                 $(this).parent().toggle();
                 $(this).prev().val('');
             }
-        })
+        });
 
         // predmeti i ocene
         let ukupanProsek = 0;
@@ -185,7 +187,7 @@ $(function () {
         $(document).on('click', '.otvori-dodavanje', function() {
             $(this).prev().toggle();
             $(this).toggle();
-        })
+        });
 
         // nakon dodavanja ili brisanja neke ocene
         function menjanjeProseka(ocene, prosekNiz, zakljucnaNiz, sveZakljucne) {
@@ -202,16 +204,34 @@ $(function () {
             prosek = (zbir / brojOcena).toFixed(2);
             zakljucna = Math.round(prosek);
 
-            $(prosekNiz[0]).text(prosek);
-
-            $(zakljucnaNiz[0]).text(zakljucna);
+            // ako je neocenjen
+            if(prosek != 'NaN') {
+                $(prosekNiz[0]).text(prosek);
+                $(zakljucnaNiz[0]).text(zakljucna);
+            } else {
+                $(prosekNiz[0]).text('Bez ocene');
+                $(zakljucnaNiz[0]).text('Bez ocene');
+            }
 
             for(let i = 0; i < sveZakljucne.length; i++) {
                 ukupnaZakljucna += Number($(sveZakljucne[i]).text());
             }
 
             ukupnaZakljucna = (ukupnaZakljucna / sveZakljucne.length).toFixed(2);
-            $('#ukupan-prosek').text(ukupnaZakljucna);
+
+            // ako ima bar jednog keca zakljucenog
+            for(let i = 0; i < sveZakljucne.length; i++) {
+
+                if($(sveZakljucne[i]).text() == 1) {
+                    $('#ukupan-prosek').text('Nedovoljan');
+                    break;
+                } else if($(sveZakljucne[i]).text() == 'Bez ocene') {
+                    $('#ukupan-prosek').text('Neocenjen');
+                    break;
+                } else {
+                    $('#ukupan-prosek').text(ukupnaZakljucna);
+                }
+            }
         }
 
         // when you add new mark
@@ -236,7 +256,7 @@ $(function () {
 
             menjanjeProseka(ocene, prosekNiz, zakljucnaNiz, sveZakljucne);
             
-        })
+        });
 
         // brisanje ocena
         $(document).on('click', '.ocene span', function() {
@@ -246,16 +266,19 @@ $(function () {
 
         $(document).on('click', '.ocene span img', function() {
 
-            let p = $(this).parent().parent();
-            let prosekNiz = $(this).parent().parent().parent().parent().next().find('h3');
-            let zakljucnaNiz = $(this).parent().parent().parent().parent().next().next().find('h3');
-            let sveZakljucne = $('.predmet').find('.zakljucna-ocena');
+            if(confirm('Da li ste sigurni da žellite da izbrišete ovu ocenu?')){
 
-            $(this).parent().remove();
+                let p = $(this).parent().parent();
+                let prosekNiz = $(this).parent().parent().parent().parent().next().find('h3');
+                let zakljucnaNiz = $(this).parent().parent().parent().parent().next().next().find('h3');
+                let sveZakljucne = $('.predmet').find('.zakljucna-ocena');
 
-            let ocene = $(p).find('span');
-            
-            menjanjeProseka(ocene, prosekNiz, zakljucnaNiz, sveZakljucne);
+                $(this).parent().remove();
+
+                let ocene = $(p).find('span');
+                
+                menjanjeProseka(ocene, prosekNiz, zakljucnaNiz, sveZakljucne);
+            }
 
         });
     }
