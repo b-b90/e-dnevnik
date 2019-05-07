@@ -406,6 +406,10 @@ footer img {
     min-height: 83px;
 }
 
+.predmet:nth-child(odd), .staro-obavestenje:nth-child(odd) {
+    background: lightgray;
+}
+
 .cetiri-kolone + .cetiri-kolone h4 {
     border-left: 5px solid brown;
 }
@@ -656,6 +660,10 @@ footer img {
 
     .predmeti-footer h2 {
         border-top: 5px solid brown;
+    }
+
+    .col-lg-3, .col-lg-5, .col-lg-2 {
+        min-height: 0;
     }
 }
 
